@@ -1,0 +1,15 @@
+$helvetica     : 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$georgia       : Georgia, Cambria, 'Times New Roman', Times, serif !default;
+$lucida-grande : 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif !default;
+$monospace     : 'Bitstream Vera Sans Mono', Consolas, Courier, monospace !default;
+$verdana       : Verdana, Geneva, sans-serif !default;
+
+$cantarell-bold     : 'Cantarell-Bold', $lucida-grande;
+$cantarell-boldoblique     : 'Cantarell-BoldOblique', $lucida-grande;
+$cantarell-oblique     : 'Cantarell-Oblique', $lucida-grande;
+$cantarell-regular     : 'Cantarell-Regular', $lucida-grande;
+
+@mixin cantarell { font-family: $cantarell-regular; letter-spacing: -.03125em; }
+@mixin cantarell-bold { @include cantarell; font-family: $cantarell-bold; }
+@mixin cantarell-boldoblique { @include cantarell; font-family: $cantarell-boldoblique; }
+@mixin cantarell-oblique { @include cantarell; font-family: $cantarell-oblique; }

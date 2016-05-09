@@ -1,0 +1,20 @@
+@import '../init';
+
+.results-synopsis {
+	font-size: 12px;
+	line-height: 13px;
+	margin: 5px 0;
+
+	.category {
+		display: none;
+		&:not(.no-content) {
+			display: inline;
+			&:not(:last-child) {
+				margin-right: 3px;
+			}
+		}
+	}
+	.category-name {
+		@include cantarell-bold;
+	}
+}

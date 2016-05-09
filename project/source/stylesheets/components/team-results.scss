@@ -1,0 +1,85 @@
+@import '../init';
+
+.team-results {
+	width: 250px;
+    display: inline-block;
+    vertical-align: top;
+
+    &:not(:last-child){
+    	margin-right: 25px;
+    }
+
+	.row {
+		display: flex;
+		& > div {
+			flex: 1 1 1em;
+		    text-align: center;
+		    padding: 2px 0;
+
+		    &.name {
+				width: 20%;
+				min-width: 100px;
+			    text-align: left;
+			}
+
+			&.avg {
+				flex: 1.5 1.5 1.5em;
+
+				text-align: right;
+			}
+
+			&.era {
+				flex: 1.75 1.75 1.75em;
+
+				text-align: right;
+			}
+
+			&.stat {
+			}
+		}
+
+		&.pitcher {
+			&.headers {
+				margin-top: 10px;
+			}
+			& > div {
+				&.name {
+					min-width: 90px;
+				}
+			}
+		}
+	}
+
+	.player {
+		font-size: 12px;
+		&.sub-batting-order{
+			.name {
+				padding-left: 8px;
+			}
+		}
+	}
+
+	.headers,
+	.totals {
+		@include cantarell-bold;
+		font-size: 10px;
+		/*background: $color-grey-lightest;*/
+		border: 1px solid $color-grey-medium;
+		border-width: 0 0 1px 0;
+		& > div {
+		    padding: 0 0 1px;
+		}
+	}
+
+	.totals {
+		border-width: 1px 0 0 0;
+		padding-top: 2px;
+		& > div {
+			&.name {
+				text-align: right;
+				padding-right: 10px;
+			}
+		}
+	}
+
+}

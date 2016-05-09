@@ -1,0 +1,61 @@
+@import '../init';
+
+body {
+	-webkit-font-smoothing: antialiased;
+	font-size: 100%;
+
+	@include cantarell;
+
+	& > div {
+		padding: 2.5% 100px;
+
+		@include width-under($bp-medium) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}
+
+.clear-both {
+	clear: both;
+}
+
+.app {
+}
+
+.headings {
+}
+
+.page {
+}
+
+button {
+	display: inline-block;
+	padding: 5px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+input[type=text] {
+	&:focus {
+		outline: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 10px;
+}
+
+.one-third {
+	&:after {
+		margin-left: 1px;
+		content: '\2153';
+	}
+}
+
+.two-thirds {
+	&:after {
+		margin-left: 1px;
+		content: '\2154';
+	}
+}
