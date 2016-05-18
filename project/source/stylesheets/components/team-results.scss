@@ -1,24 +1,19 @@
 @import '../init';
 
 .team-results {
-	width: 250px;
-    display: inline-block;
+    /*display: inline-block;*/
     vertical-align: top;
-
-    &:not(:last-child){
-    	margin-right: 25px;
-    }
 
 	.row {
 		display: flex;
 		& > div {
 			flex: 1 1 1em;
 		    text-align: center;
-		    padding: 2px 0;
+		    padding: 0.0625em 0;
 
 		    &.name {
 				width: 20%;
-				min-width: 100px;
+				min-width: 7.25em;
 			    text-align: left;
 			}
 
@@ -40,21 +35,16 @@
 
 		&.pitcher {
 			&.headers {
-				margin-top: 10px;
-			}
-			& > div {
-				&.name {
-					min-width: 90px;
-				}
+				margin-top: 0.625em;
 			}
 		}
 	}
 
 	.player {
-		font-size: 12px;
+		font-size: .75em;
 		&.sub-batting-order{
 			.name {
-				padding-left: 8px;
+				padding-left: 0.66em;
 			}
 		}
 	}
@@ -62,24 +52,29 @@
 	.headers,
 	.totals {
 		@include cantarell-bold;
-		font-size: 10px;
+		font-size: 0.625em;
 		/*background: $color-grey-lightest;*/
-		border: 1px solid $color-grey-medium;
-		border-width: 0 0 1px 0;
+		border: 2px solid black; //$color-grey-medium;
+		border-width: 0 0 2px 0;
 		& > div {
-		    padding: 0 0 1px;
+		    padding: 0 0 .1em;
 		}
+	}
+
+	.headers {
+	    margin-bottom: .5em;
 	}
 
 	.totals {
-		border-width: 1px 0 0 0;
-		padding-top: 2px;
+		border-width: 2px 0 0 0;
+		padding-top: .2em;
+		margin-top: .5em;
 		& > div {
 			&.name {
 				text-align: right;
-				padding-right: 10px;
+				padding-right: 0.625em;
 			}
 		}
 	}
-
 }
+

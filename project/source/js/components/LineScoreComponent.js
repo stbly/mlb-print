@@ -18,12 +18,18 @@ class LineScoreComponent extends Component {
 		super(props)
 	}
 
+	handleClick (e) {
+		if (this.props.handleClick) {
+			this.props.handleClick(e);
+		}
+	}
+
 	render () {
 
 		var boxscore = this.props.boxscore
 
 		return (
-			<div className='line-scores'>
+			<div onClick={this.handleClick.bind(this)} className='boxscore-item line-scores'>
 				<DataRow classes='headers'>
 					<div className='team-name'>TEAM</div>
 
@@ -55,7 +61,8 @@ class LineScoreComponent extends Component {
 }
 
 LineScoreComponent.propTypes = {
-	boxscore: React.PropTypes.object
+	boxscore: React.PropTypes.object,
+	handleClick: React.PropTypes.func
 }
 
 

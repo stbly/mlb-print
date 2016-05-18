@@ -15,13 +15,6 @@ import '../../stylesheets/components/box-score.scss'
 class BoxScore extends Component {
 	constructor(props) {
 		super(props)
-		this.props.actions.fetchBoxscoreIfAvailable()
-	}
-
-	componentWillReceiveProps (nextProps) {
-		this.props.actions.fetchBoxscoreIfAvailable().then(function (res) {
-			console.log(res)
-		})
 	}
 
 	render () {
@@ -33,8 +26,8 @@ class BoxScore extends Component {
 
 		return (
 			<div className='boxscores'>
-				<LineScoreComponent boxscore={this.props.boxscore}/>
 				<TeamResultsComponent boxscore={this.props.boxscore} team={'away'} />
+				<LineScoreComponent boxscore={this.props.boxscore}/>
 				<TeamResultsComponent boxscore={this.props.boxscore} team={'home'} />
 			</div>
 		)
@@ -47,18 +40,4 @@ function mapDispatchToProps(dispatch) {
 }
 */
 
-
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(boxscoreActions, dispatch)
-    }
-}
-
-function mapStateToProps (state,ownProps) {
-	return {
-		boxscore: state.boxscores.data,
-		boxscoreId: state.boxscores.boxscoreId
-	};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BoxScore);
+export default BoxScore;

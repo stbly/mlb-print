@@ -1,0 +1,31 @@
+@import '../init';
+
+.baseball-image-page {
+	height: 100vh;
+    width: 100vw;
+
+    @media print {
+	    width: $baseball-image-print-width;
+	    height: $baseball-image-print-height;
+	    left: calc((100% - #{$baseball-image-print-width}) / 2);
+	    top: calc((100% - #{$baseball-image-print-height}) / 2);
+	    overflow: hidden;
+	    position: absolute;
+    }
+
+    .baseball-image {
+    	.container {
+		    @media print {
+			    left: 0;
+			    width: $baseball-image-print-width;
+			    height: $baseball-image-print-height;
+			    overflow: hidden;
+
+			    svg {
+			    	/*display: none;*/
+			    }
+		    }
+    	}
+    }
+
+}

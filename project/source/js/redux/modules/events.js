@@ -4,7 +4,7 @@ import {formatDate} from '../../helpers/dateUtils'
 var defaultDate = new Date()
 defaultDate.setDate(defaultDate.getDate()-1);
 
-console.log(defaultDate);
+// console.log(defaultDate);
 
 let initialState = {
 	fetching: false,
@@ -28,22 +28,22 @@ export function dateSelected (date) {
 
 
 export function fetchEvents(state) {
-	console.log('fetching...')
+	// console.log('fetching...')
 	return function (dispatch) {
 
 		dispatch(requestEvents())
 
-		console.log('date to fetch:',state.events.eventDate)
+		// console.log('date to fetch:',state.events.eventDate)
 
 		var eventDate = formatDate(state.events.eventDate)
 
 		var url = '/api/' + eventDate //process.env.NODE_ENV === 'development' ? '/api/events' : './data/events.json'
 
-		console.log(url);
+		// console.log(url);
 
 		return fetch(url)
 			.then(function(response) {
-				console.log(response)
+				// console.log(response)
 				response.json().then(function(data) {
 					dispatch(receiveEvents(data))
 				})
@@ -52,12 +52,12 @@ export function fetchEvents(state) {
 }
 
 export function fetchEventsIfNeeded() {
-	console.log('fetchEventsIfNeeded()')
+	// console.log('fetchEventsIfNeeded()')
 	return (dispatch, getState) => {
 
 		var state = getState()
 
-		console.log('fetching')
+		// console.log('fetching')
 
 	    if (shouldFetchEvents(state)) {
 			return dispatch(fetchEvents(state))
@@ -95,7 +95,7 @@ export default function reducer (state = initialState, action) {
 			break
 
 		case 'RECEIVE_EVENTS':
-			console.log('receiving events')
+			// console.log('receiving events')
 			newState = Object.assign({}, state, {
 				fetching: false,
 				didInvalidate: false,

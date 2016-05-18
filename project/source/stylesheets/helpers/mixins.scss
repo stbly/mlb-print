@@ -319,3 +319,32 @@ $ease-in-out-circ:  cubic-bezier(0.785, 0.135, 0.150, 0.860);
     vertical-align: $align;
 }
 
+@mixin rollover-message($message) {
+    overflow: hidden;
+    &:hover {
+        &:before {
+            content: $message;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-align: center;
+            padding-top: 15%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+}
+
+@mixin hide-on-rollover() {
+    &:hover {
+        display:none;
+    }
+}
+
+@mixin scalingText ($offset, $multiplier, $base:100) {
+    font-size: calc( (#{$multiplier} * (#{$offset})) / #{$base})
+
+}

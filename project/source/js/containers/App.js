@@ -5,9 +5,6 @@ import { bindActionCreators } from 'redux'
 
 import '../../stylesheets/components/app.scss'
 
-import EventSearch from './EventSearch'
-import BoxScore from './BoxScore'
-
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -16,9 +13,8 @@ class App extends Component {
 	render() {
 		return (
 
-			<div className='app'>
-				<EventSearch />
-				<BoxScore />
+			<div className='baseball-printing-app'>
+				{this.props.children || "No page yet"}
 			</div>
 		)
 	}

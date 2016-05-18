@@ -2,17 +2,16 @@
 
 .line-scores {
 
-	width: 250px;
+	font-size: 12px;
 
 	.row {
 		display: flex;
 
-		border: 1px solid $color-grey-medium;
+		border: 2px solid black; //$color-grey-medium;
 		border-width: 0;
-		font-size: 14px;
 
 		&:first-of-type {
-			border-bottom-width: 1px;
+			border-bottom-width: 2px;
 		}
 
 		&:not(:first-of-type) {
@@ -22,12 +21,7 @@
 		& > * {
 			flex: 1 1 1em;
 		    text-align: center;
-		    padding: 2px 0;
-		    font-size: 12px;
-
-		    &:not(:first-child){
-		    	border-left-width: 1px
-		    }
+		    padding: 0.0625em 0;
 
 		    &.team-totals {
 			    border: 0px solid $color-grey-lightest;
@@ -36,8 +30,8 @@
 			}
 
 		    &.team-name {
-			    width: 15%;
-			    min-width: 50px;
+		    	@include cantarell-bold;
+			    min-width: 25%;
 			    text-align: left;
 			    text-overflow: ellipsis;
 			    white-space: nowrap;
@@ -45,25 +39,35 @@
 			}
 		}
 
+		&.line-score {
+			.team-name {
+				@include cantarell-bold;
+				font-size: 0.75em;
+				text-transform: uppercase;
+				margin: .2em 0;
+			}
+		}
+
 		.period {
 			&:first-of-type{
-				margin-left: 3%;
+				margin-left: 5%;
 			}
 			&:nth-of-type(3n){
-				margin-right: 3%;
+				margin-right: 5%;
 			}
 			&:last-of-type{
-				margin-right: 3%;
+				margin-right: 5%;
 			}
 		}
 
 		&.headers {
 			@include cantarell-bold;
+			font-size: .75em;
+		    margin-bottom: 1em;
 			/*background: $color-grey-lightest;*/
 			/*border-bottom: 1px solid $color-grey-medium;*/
 			& > * {
-				font-size: 10px;
-			    padding: 0 0 1px;
+			    padding: 0 0 0.1em;
 			}
 		}
 

@@ -1,0 +1,18 @@
+
+@mixin all-team-colors ($el:background) {
+	@each $team, $colors in $team-colors {
+		@include team-colors ($team, $el);
+	}
+}
+
+
+@mixin team-colors ($team-name, $el) {
+	$teamColors: getTeamColors($team-name);
+	.#{$team-name} {
+		@each $index, $color in $teamColors {
+			&.color-#{$index} {
+				#{$el}: $color;
+			}
+		}
+	}
+}

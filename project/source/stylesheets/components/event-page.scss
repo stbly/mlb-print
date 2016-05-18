@@ -1,0 +1,79 @@
+@import '../init';
+
+.event-page {
+	padding: 2.5% 100px;
+
+	@include width-under($bp-medium) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	button {
+		background: getTeamColor(chicago-white-sox, 3);
+		/*color: getTeamColor(boston-red-sox, 1);*/
+
+		&:not(:last-child) {
+			margin: 0 10px 10px 0;
+		}
+
+		&:hover {
+			background: $color-grey-lightest;
+			background: getTeamColor(boston-red-sox, 1);
+			color: white;
+		}
+
+		* {
+			pointer-events: none
+		}
+
+		&.active {
+			background: red;
+		}
+	}
+
+	.boxscore-info {
+		position: relative;
+		margin: 1em 0;
+	}
+
+	.baseball-image {
+
+		position: absolute;
+
+		width: calc(100vw - 500px);
+		height: calc(.333 * (100vw - 500px));
+		top: 0;
+		right: 0;
+
+		.container {
+			width: 100%;
+			left: 0;
+		}
+
+		.container-boxscore {
+			@include rollover-message('View Fullscreen');
+			&:hover {
+				&:before {
+					background: rgba(0,0,0, 0.85);
+				}
+			}
+		}
+
+		.container-guides {
+			pointer-events: none;
+		}
+
+		.boxscores {
+			@include scalingText('100vw - 550px', $baseball-image-font-size);
+		}
+
+		@include width-under($bp-medium) {
+			width: calc(100vw - 340px);
+			height: calc(.333 * (100vw - 340px));
+
+			.boxscores {
+				@include scalingText('100vw - 340px', $baseball-image-font-size);
+			}
+		}
+	}
+}

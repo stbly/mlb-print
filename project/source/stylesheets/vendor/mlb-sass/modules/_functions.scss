@@ -1,0 +1,17 @@
+
+@function getTeamColor($team-name, $index) {
+	$teamColors: getTeamColors($team-name);
+	@debug $team-name $teamColors $index ;
+	@if not map-has-key($teamColors, ($index)) {
+		@warn "No team color found at index `#{$index}` for `#{$team-name}`.";
+	}
+	$color: map-get($teamColors, $index);
+	@return $color;
+}
+
+@function getTeamColors($team-name) {
+	@if not map-has-key($team-colors, $team-name) {
+		@warn "No team colors found for `#{$team-name}`.";
+	}
+	@return map-get($team-colors, $team-name);
+}

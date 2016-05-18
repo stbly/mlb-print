@@ -8,6 +8,9 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './redux/store'
 
 import App from './containers/App'
+import EventPage from './containers/EventPage'
+import EventIdPage from './containers/EventIdPage'
+import BoxScorePage from './containers/BoxScorePage'
 
 //import configureStore from './store/configureStore'
 //import * as actions from './actions/index'
@@ -23,7 +26,11 @@ const history = syncHistoryWithStore(historyType, store)
 		render(
 			<Provider store={store}>
 				<Router history={history}>
-					<Route name='app' path="/" component={App}>
+					<Route path="/" component={App}>
+						<Route path="events" component={EventPage}>
+							<Route path =':id' component={EventIdPage}/>
+						</Route>
+						<Route path="boxscore/:id" component={BoxScorePage} />
 					</Route>
 				</Router>
 			</Provider>,
@@ -31,4 +38,5 @@ const history = syncHistoryWithStore(historyType, store)
 		)
 	// })
 
-						// <Route path='box-score-search' component={BoxScoreSearch} />
+// <Route name='boxscore' path="/boxscore/:id" component={Boxscore} />
+// <Route path='box-score-search' component={BoxScoreSearch} />

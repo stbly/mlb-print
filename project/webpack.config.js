@@ -96,17 +96,20 @@ function createWebpackLoaders () {
     test: /\.(ogg|mp?4a|mp3)$/,
     loader: 'file'
   }, {
-    test: /\.(jpg|png)$/,
+    test: /\.png$/,
     loader: 'file',
     query: {
       name: 'images/[name].[ext]'
     }
   },{
-    test: /\.json$/,
-    loader: 'json',
+    test: /\.jpg$/,
+    loader: "url-loader?limit=10000&minetype=image/jpg",
     query: {
       name: 'images/[name].[ext]'
     }
+  },{
+    test: /\.json$/,
+    loader: 'json'
   }]
 
   if (ENV_IS_PRODUCTION) {

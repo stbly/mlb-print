@@ -1,0 +1,322 @@
+$color-arizona-diamondbacks-1: #A71930;
+$color-arizona-diamondbacks-2: #DBCEAC;
+$color-arizona-diamondbacks-3: #09ADAD;
+$color-arizona-diamondbacks-4: #000000;
+$color-arizona-diamondbacks-5: #FFFFFF;
+
+$color-atlanta-braves-1: #01487E;
+$color-atlanta-braves-2: #D60D39;
+$color-atlanta-braves-3: #FFFFFF;
+
+$color-baltimore-orioles-1: #F4632A;
+$color-baltimore-orioles-2: #000000;
+$color-baltimore-orioles-3: #FFFFFF;
+
+$color-boston-red-sox-1: #C60C30;
+$color-boston-red-sox-2: #002244;
+$color-boston-red-sox-3: #FFFFFF;
+
+$color-chicago-cubs-1: #0E3386;
+$color-chicago-cubs-2: #D12325;
+$color-chicago-cubs-3: #FFFFFF;
+
+$color-chicago-white-sox-1: #000000;
+$color-chicago-white-sox-2: #FFFFFF;
+$color-chicago-white-sox-3: #DCDDDF;
+
+$color-cincinnati-reds-1: #C6011F;
+$color-cincinnati-reds-2: #FFFFFF;
+$color-cincinnati-reds-3: #000000;
+
+$color-cleveland-indians-1: #ED174C;
+$color-cleveland-indians-2: #002B5C;
+$color-cleveland-indians-3: #FFFFFF;
+
+$color-colorado-rockies-1: #333366;
+$color-colorado-rockies-2: #000000;
+$color-colorado-rockies-3: #CACDCD;
+$color-colorado-rockies-4: #FFFFFF;
+
+$color-detroit-tigers-1: #10293F;
+$color-detroit-tigers-2: #FFFFFF;
+$color-detroit-tigers-3: #DE4406;
+
+$color-houston-astros-1: #072854;
+$color-houston-astros-2: #FF7F00;
+$color-houston-astros-3: #FFFFFF;
+
+$color-kansas-city-royals-1: #15317E;
+$color-kansas-city-royals-2: #FFFFFF;
+$color-kansas-city-royals-3: #74B4FA;
+
+$color-los-angeles-angels-1: #003262;
+$color-los-angeles-angels-2: #CE1141;
+$color-los-angeles-angels-3: #FFFFFF;
+
+$color-los-angeles-dodgers-1: #005596;
+$color-los-angeles-dodgers-2: #FFFFFF;
+
+$color-miami-marlins-1: #000000;
+$color-miami-marlins-2: #F46634;
+$color-miami-marlins-3: #FCDE04;
+$color-miami-marlins-4: #A4AAAC;
+$color-miami-marlins-5: #0482CC;
+$color-miami-marlins-6: #FFFFFF;
+
+$color-milwaukee-brewers-1: #012143;
+$color-milwaukee-brewers-2: #C4953B;
+$color-milwaukee-brewers-3: #FFFFFF;
+
+$color-minnesota-twins-1: #042462;
+$color-minnesota-twins-2: #D31145;
+$color-minnesota-twins-3: #CFAB7A;
+$color-minnesota-twins-4: #FFFFFF;
+
+$color-new-york-mets-1: #004685;
+$color-new-york-mets-2: #F7742C;
+$color-new-york-mets-3: #FFFFFF;
+
+$color-new-york-yankees-1: #1C2841;
+$color-new-york-yankees-2: #FFFFFF;
+$color-new-york-yankees-3: #808080;
+
+$color-oakland-athletics-1: #00483A;
+$color-oakland-athletics-2: #FFBE00;
+$color-oakland-athletics-3: #FFFFFF;
+
+$color-philadelphia-phillies-1: #CA1F2C;
+$color-philadelphia-phillies-2: #FFFFFF;
+$color-philadelphia-phillies-3: #226AA9;
+
+$color-pittsburgh-pirates-1: #000000;
+$color-pittsburgh-pirates-2: #FFB40B;
+$color-pittsburgh-pirates-3: #FFFFFF;
+
+$color-san-diego-padres-1: #002D62;
+$color-san-diego-padres-2: #FFFFFF;
+$color-san-diego-padres-3: #FEC325;
+$color-san-diego-padres-4: #7F411C;
+$color-san-diego-padres-5: #A0AAB2;
+
+$color-san-francisco-giants-1: #000000;
+$color-san-francisco-giants-2: #FB5B1F;
+$color-san-francisco-giants-3: #FFFDD0;
+
+$color-seattle-mariners-1: #003166;
+$color-seattle-mariners-2: #1C8B85;
+$color-seattle-mariners-3: #C0C0C0;
+$color-seattle-mariners-4: #FFFFFF;
+
+$color-st-louis-cardinals-1: #C41E3A;
+$color-st-louis-cardinals-2: #0A2252;
+$color-st-louis-cardinals-3: #FFFFFF;
+
+$color-tampa-bay-rays-1: #00285D;
+$color-tampa-bay-rays-2: #79BDEE;
+$color-tampa-bay-rays-3: #FFFFFF;
+$color-tampa-bay-rays-4: #FFD700;
+
+$color-texas-rangers-1: #BD1021;
+$color-texas-rangers-2: #FFFFFF;
+$color-texas-rangers-3: #003279;
+
+$color-toronto-blue-jays-1: #003DA5;
+$color-toronto-blue-jays-2: #041E42;
+$color-toronto-blue-jays-3: #FFFFFF;
+$color-toronto-blue-jays-4: #DA291C;
+
+$color-washington-nationals-1: #BA122B;
+$color-washington-nationals-2: #14225A;
+$color-washington-nationals-3: #FFFFFF;
+
+$team-colors: (
+	arizona-diamondbacks: (
+		1: $color-arizona-diamondbacks-1,
+		2: $color-arizona-diamondbacks-2,
+		3: $color-arizona-diamondbacks-3,
+		4: $color-arizona-diamondbacks-4,
+		5: $color-arizona-diamondbacks-5
+	),
+
+	atlanta-braves: (
+		1: $color-atlanta-braves-1,
+		2: $color-atlanta-braves-2,
+		3: $color-atlanta-braves-3
+	),
+
+	baltimore-orioles: (
+		1: $color-baltimore-orioles-1,
+		2: $color-baltimore-orioles-2,
+		3: $color-baltimore-orioles-3
+	),
+
+	boston-red-sox: (
+		1: $color-boston-red-sox-1,
+		2: $color-boston-red-sox-2,
+		3: $color-boston-red-sox-3
+	),
+
+	chicago-cubs: (
+		1: $color-chicago-cubs-1,
+		2: $color-chicago-cubs-2,
+		3: $color-chicago-cubs-3
+	),
+
+	chicago-white-sox: (
+		1: $color-chicago-white-sox-1,
+		2: $color-chicago-white-sox-2,
+		3: $color-chicago-white-sox-3
+	),
+
+	cincinnati-reds: (
+		1: $color-cincinnati-reds-1,
+		2: $color-cincinnati-reds-2,
+		3: $color-cincinnati-reds-3
+	),
+
+	cleveland-indians: (
+		1: $color-cleveland-indians-1,
+		2: $color-cleveland-indians-2,
+		3: $color-cleveland-indians-3
+	),
+
+	colorado-rockies: (
+		1: $color-colorado-rockies-1,
+		2: $color-colorado-rockies-2,
+		3: $color-colorado-rockies-3,
+		4: $color-colorado-rockies-4
+	),
+
+	detroit-tigers: (
+		1: $color-detroit-tigers-1,
+		2: $color-detroit-tigers-2,
+		3: $color-detroit-tigers-3
+	),
+
+	houston-astros: (
+		1: $color-houston-astros-1,
+		2: $color-houston-astros-2,
+		3: $color-houston-astros-3
+	),
+
+	kansas-city-royals: (
+		1: $color-kansas-city-royals-1,
+		2: $color-kansas-city-royals-2,
+		3: $color-kansas-city-royals-3
+	),
+
+	los-angeles-angels: (
+		1: $color-los-angeles-angels-1,
+		2: $color-los-angeles-angels-2,
+		3: $color-los-angeles-angels-3
+	),
+
+	los-angeles-dodgers: (
+		1: $color-los-angeles-dodgers-1,
+		2: $color-los-angeles-dodgers-2
+	),
+
+	miami-marlins: (
+		1: $color-miami-marlins-1,
+		2: $color-miami-marlins-2,
+		3: $color-miami-marlins-3,
+		4: $color-miami-marlins-4,
+		5: $color-miami-marlins-5,
+		6: $color-miami-marlins-6
+	),
+
+	milwaukee-brewers: (
+		1: $color-milwaukee-brewers-1,
+		2: $color-milwaukee-brewers-2,
+		3: $color-milwaukee-brewers-3
+	),
+
+	minnesota-twins: (
+		1: $color-minnesota-twins-1,
+		2: $color-minnesota-twins-2,
+		3: $color-minnesota-twins-3,
+		4: $color-minnesota-twins-4
+	),
+
+	new-york-mets: (
+		1: $color-new-york-mets-1,
+		2: $color-new-york-mets-2,
+		3: $color-new-york-mets-3
+	),
+
+	new-york-yankees: (
+		1: $color-new-york-yankees-1,
+		2: $color-new-york-yankees-2,
+		3: $color-new-york-yankees-3
+	),
+
+	oakland-athletics: (
+		1: $color-oakland-athletics-1,
+		2: $color-oakland-athletics-2,
+		3: $color-oakland-athletics-3
+	),
+	philadelphia-phillies: (
+		1: $color-philadelphia-phillies-1,
+		2: $color-philadelphia-phillies-2,
+		3: $color-philadelphia-phillies-3
+	),
+
+	pittsburgh-pirates: (
+		1: $color-pittsburgh-pirates-1,
+		2: $color-pittsburgh-pirates-2,
+		3: $color-pittsburgh-pirates-3
+	),
+
+	san-diego-padres: (
+		1: $color-san-diego-padres-1,
+		2: $color-san-diego-padres-2,
+		3: $color-san-diego-padres-3,
+		4: $color-san-diego-padres-4,
+		5: $color-san-diego-padres-5
+	),
+
+	san-francisco-giants: (
+		1: $color-san-francisco-giants-1,
+		2: $color-san-francisco-giants-2,
+		3: $color-san-francisco-giants-3
+	),
+
+	seattle-mariners: (
+		1: $color-seattle-mariners-1,
+		2: $color-seattle-mariners-2,
+		3: $color-seattle-mariners-3,
+		4: $color-seattle-mariners-4
+	),
+
+	st-louis-cardinals: (
+		1: $color-st-louis-cardinals-1,
+		2: $color-st-louis-cardinals-2,
+		3: $color-st-louis-cardinals-3
+	),
+
+	tampa-bay-rays: (
+		1: $color-tampa-bay-rays-1,
+		2: $color-tampa-bay-rays-2,
+		3: $color-tampa-bay-rays-3,
+		4: $color-tampa-bay-rays-4
+	),
+
+	texas-rangers: (
+		1: $color-texas-rangers-1,
+		2: $color-texas-rangers-2,
+		3: $color-texas-rangers-3
+	),
+
+	toronto-blue-jays: (
+		1: $color-toronto-blue-jays-1,
+		2: $color-toronto-blue-jays-2,
+		3: $color-toronto-blue-jays-3,
+		4: $color-toronto-blue-jays-4
+	),
+
+	washington-nationals: (
+		1: $color-washington-nationals-1,
+		2: $color-washington-nationals-2,
+		3: $color-washington-nationals-3
+	)
+);

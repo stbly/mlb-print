@@ -45,6 +45,12 @@ class TeamResultsComponent extends Component {
 	componentWillReceiveProps(nextProps) {
 	}
 
+	handleClick (e) {
+		if (this.props.handleClick) {
+			this.props.handleClick(e);
+		}
+	}
+
 	render () {
 
 		var boxscore = this.props.boxscore,
@@ -57,7 +63,7 @@ class TeamResultsComponent extends Component {
 			teamName = boxscore[teamtype + '_team'].first_name.toUpperCase()
 
 		return (
-			<div className='team-results'>
+			<div onClick={this.handleClick.bind(this)} className='boxscore-item team-results'>
 				<TeamResultsHeader name={teamName} stats={BATTING_STATS} type={'batter'} />
 				<TeamResultsPlayers players={batters} stats={BATTING_STATS} type={'batter'} />
 				<TeamResultsTotals name={teamName} totals={batterTotals} stats={BATTING_STATS} type={'batter'} />
@@ -71,7 +77,8 @@ class TeamResultsComponent extends Component {
 
 TeamResultsComponent.propTypes = {
 	team: React.PropTypes.string,
-	boxscore: React.PropTypes.object
+	boxscore: React.PropTypes.object,
+	handleClick: React.PropTypes.func
 }
 
 
