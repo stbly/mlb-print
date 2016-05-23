@@ -10,7 +10,7 @@ import configureStore from './redux/store'
 import App from './containers/App'
 import EventPage from './containers/EventPage'
 import EventIdPage from './containers/EventIdPage'
-import BoxScorePage from './containers/BoxScorePage'
+import BaseballImagePage from './containers/BaseballImagePage'
 
 //import configureStore from './store/configureStore'
 //import * as actions from './actions/index'
@@ -21,22 +21,19 @@ var historyType = process.env.NODE_ENV === 'development' ? browserHistory : hash
 
 const history = syncHistoryWithStore(historyType, store)
 
-// store.dispatch(fetchPlayers(store.getState()))
-	// .then( (res) => {
-		render(
-			<Provider store={store}>
-				<Router history={history}>
-					<Route path="/" component={App}>
-						<Route path="events" component={EventPage}>
-							<Route path =':id' component={EventIdPage}/>
-						</Route>
-						<Route path="boxscore/:id" component={BoxScorePage} />
-					</Route>
-				</Router>
-			</Provider>,
-			document.getElementById('root')
-		)
-	// })
+render(
+	<Provider store={store}>
+		<Router history={history}>
+			<Route path="/" component={App}>
+				<Route path="events" component={EventPage}>
+					<Route path =':id' component={EventIdPage}/>
+				</Route>
+				<Route path="boxscore/:id" component={BaseballImagePage} />
+			</Route>
+		</Router>
+	</Provider>,
+	document.getElementById('root')
+)
 
 // <Route name='boxscore' path="/boxscore/:id" component={Boxscore} />
 // <Route path='box-score-search' component={BoxScoreSearch} />

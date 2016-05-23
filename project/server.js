@@ -83,6 +83,28 @@ app.use(express.static(__dirname))
 // data for the current date. Otherwise, it checks for an 'id' parameter
 // that contains a valid date in yyyyMMdd format and returns data for that
 // date.
+
+function handleResponse (res, url, statusCode, contentType, data) {
+  if (statusCode !== 200) {
+    console.warn('Server did not return a "200 OK" response! ' +
+        'Got "%s" instead.', statusCode);
+    // If error response is of type 'application/json', it will be an
+    // XmlstatsError see https://erikberg.com/api/objects/xmlstats-error
+    // var reason = (contentType === 'application/json')
+    //     ? data.error.description
+    //     : data;
+    // res.status(statusCode).render('error', { code: statusCode, reason: reason });
+    return;
+  } else {
+    res.json(data);
+    // Store good response in cache
+    cache.set(url, data);
+  }
+
+    // var titleDate = formatDate(data.events_date, longDate);
+    // res.render('index', { header: titleDate, events: data });
+}
+
 app.get('/api/:id?', function (req, res) {
   xmlEventsUrl.params.date = moment().format(shortDate);
   if (req.params.id) {
@@ -96,26 +118,10 @@ app.get('/api/:id?', function (req, res) {
 
   var url = buildUrl(xmlEventsUrl);
 
-
   httpGet(url, function (statusCode, contentType, data) {
-    if (statusCode !== 200) {
-      console.warn('Server did not return a "200 OK" response! ' +
-          'Got "%s" instead.', statusCode);
-      // If error response is of type 'application/json', it will be an
-      // XmlstatsError see https://erikberg.com/api/objects/xmlstats-error
-      var reason = (contentType === 'application/json')
-          ? data.error.description
-          : data;
-      res.status(statusCode).render('error', { code: statusCode, reason: reason });
-      return;
-    }
-
-    res.json(data);
-    // Store good response in cache
-    cache.set(url, data);
-    // var titleDate = formatDate(data.events_date, longDate);
-    // res.render('index', { header: titleDate, events: data });
+    handleResponse(res, url, statusCode, contentType, data)
   });
+
 });
 
 app.get('/api/boxscore/:id', function (req, res) {
@@ -130,24 +136,9 @@ app.get('/api/boxscore/:id', function (req, res) {
   var url = buildUrl(xmlBoxscoreUrl);
 
   httpGet(url, function (statusCode, contentType, data) {
-    if (statusCode !== 200) {
-      console.warn('Server did not return a "200 OK" response! ' +
-          'Got "%s" instead.', statusCode);
-      // If error response is of type 'application/json', it will be an
-      // XmlstatsError see https://erikberg.com/api/objects/xmlstats-error
-      var reason = (contentType === 'application/json')
-          ? data.error.description
-          : data;
-      res.status(statusCode).render('error', { code: statusCode, reason: reason });
-      return;
-    }
-
-    res.json(data);
-    // Store good response in cache
-    cache.set(url, data);
-    // var titleDate = formatDate(data.events_date, longDate);
-    // res.render('index', { header: titleDate, events: data });
+    handleResponse(res, url, statusCode, contentType, data)
   });
+
 });
 
 function httpGet(url, callback) {

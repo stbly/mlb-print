@@ -1,10 +1,15 @@
 @import '../init';
+@import '../helpers/reset';
 
 body {
 	-webkit-font-smoothing: antialiased;
 	font-size: 100%;
 
 	@include cantarell;
+}
+
+a {
+    text-decoration: none;
 }
 
 .clear-both {
@@ -48,5 +53,21 @@ h1, h2, h3, h4, h5, h6 {
 	&:after {
 		margin-left: 1px;
 		content: '\2154';
+	}
+}
+
+.headers,
+.totals {
+	@include cantarell-bold;
+
+	font-size: 0.75em;
+	/*background: $color-grey-lightest;*/
+	border: 0 solid black; //$color-grey-medium;
+	border-width: 0 0 .15em 0;
+
+    margin-bottom: .5em;
+
+	& > div {
+	    padding: 0 0 .1em;
 	}
 }

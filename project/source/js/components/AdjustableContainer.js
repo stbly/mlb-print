@@ -5,13 +5,6 @@ import { bindActionCreators } from 'redux'
 
 import classNames from 'classnames';
 
-import * as boxscoreActions from '../redux/modules/boxscores'
-
-import LineScoreComponent from '../components/LineScoreComponent'
-import TeamResultsComponent from '../components/TeamResultsComponent'
-
-import '../../stylesheets/components/box-score.scss'
-
 class AdjustableContainer extends Component {
 	constructor(props) {
 		super(props)
@@ -25,10 +18,8 @@ class AdjustableContainer extends Component {
 	}
 
 	componentWillReceiveProps (nextProps) {
-		if (nextProps.adjustments) {
-			console.log('adjustments found!', nextProps.adjustments)
-			this.setState({adjustments: nextProps.adjustments})
-		}
+		console.log('adjustments found!', nextProps.adjustments)
+		this.setState({adjustments: nextProps.adjustments || {x:0, y:0}})
 	}
 
 	handleDragStart (e) {

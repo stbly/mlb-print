@@ -32,11 +32,10 @@ class EventIdPage extends Component {
 
 	shouldComponentUpdate (nextProps, nextState) {
 
-		console.log('shouldComponentUpdate')
 		var propsAreTheSame = JSON.stringify(nextProps) === JSON.stringify(this.props),
 			stateIsTheSame = JSON.stringify(nextState) === JSON.stringify(this.state)
 
-		console.log(propsAreTheSame, stateIsTheSame, this.props.boxscoreAdjustments)
+		console.log('shouldComponentUpdate?',!propsAreTheSame || !stateIsTheSame || this.props.boxscoreAdjustments)
 
 		return !propsAreTheSame || !stateIsTheSame || this.props.boxscoreAdjustments
 	}
@@ -74,7 +73,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps (state,ownProps) {
-	console.log(state.boxscores.adjustments)
+	console.log('------', state.boxscores.adjustments)
 	return {
 		boxscore: state.boxscores.data,
 		boxscoreId: state.boxscores.boxscoreId,

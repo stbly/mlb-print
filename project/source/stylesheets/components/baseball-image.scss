@@ -65,7 +65,7 @@
 		padding: 0 5%;
 		margin: 0;
 
-		@include scalingText('100vw - 80px', $baseball-image-font-size);
+		@include scalingText('100vw - 120px', $baseball-image-font-size);
 
 		@media print {
 			@include scalingText(#{$baseball-image-print-width}, $baseball-image-font-size);
@@ -91,7 +91,7 @@
 			}
 		}
 
-		.team-results {
+		.results {
 			.player,
 			.totals {
 				font-size: inherit;
@@ -132,12 +132,12 @@
 
 		.results-synopsis {
 			font-size: inherit;
-		    line-height: 1.25em;
+		    line-height: 1.1em;
 		    margin: .5em 0;
 		}
 		.line-scores {
-			padding-bottom: .75em;
-			border-bottom: 2px solid black;
+			padding-bottom: 0;//.75em;
+			border-bottom: 0;//.15em solid black;
 			font-size: inherit;
 
 		}

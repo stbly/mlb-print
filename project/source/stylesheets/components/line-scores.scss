@@ -3,15 +3,15 @@
 .line-scores {
 
 	font-size: 12px;
+	margin: .75em 0;
 
 	.row {
 		display: flex;
 
-		border: 2px solid black; //$color-grey-medium;
-		border-width: 0;
+		border: 0 solid black; //$color-grey-medium;
 
 		&:first-of-type {
-			border-bottom-width: 2px;
+			border-bottom-width: .15em;
 		}
 
 		&:not(:first-of-type) {

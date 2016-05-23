@@ -5,15 +5,21 @@ import { bindActionCreators } from 'redux'
 
 import classNames from 'classnames';
 
-import * as boxscoreActions from '../redux/modules/boxscores'
-
-import LineScoreComponent from '../components/LineScoreComponent'
-import TeamResultsComponent from '../components/TeamResultsComponent'
-import AdjustableContainer from '../components/AdjustableContainer'
+import LineScoreComponent from './LineScoreComponent'
+import TeamResultsComponent from './TeamResultsComponent'
+import AdjustableContainer from './AdjustableContainer'
+import GameSynopsis	from './GameSynopsis'
+import ResultsSynopsis from './ResultsSynopsis'
+import Results from './Results'
+import BoxScore from './BoxScore'
 
 import '../../stylesheets/components/box-score.scss'
 
-class BoxScoreAdjustable extends Component {
+import {BATTING_STATS, PITCHING_STATS, SYNOPSIS_BATTING_STATS} from '../helpers/constants'
+
+import {getTeamName} from '../helpers/stringUtils'
+
+class BoxScoreAdjustable extends BoxScore {
 	constructor(props) {
 		super(props)
 	}
@@ -34,7 +40,7 @@ class BoxScoreAdjustable extends Component {
 			adjustments = this.props.adjustments[name];
 		}
 
-		return adjustments
+		return adjustments || 0
 	}
 
 	render () {
@@ -44,40 +50,69 @@ class BoxScoreAdjustable extends Component {
 			return (<div></div>)
 		}
 
+		console.log('boxscore adjustments:',this.props)
+
 		return (
 			<div className='boxscores'>
-				<AdjustableContainer
-					ignoreX
-					data-name='container-1'
+				<AdjustableContainer ignoreX
 					adjustments={this.getAdjustmentsFor('container-1')}
 					handleDragEnd={this.createAdjustmentHandler('container-1')}>
-						<TeamResultsComponent boxscore={this.props.boxscore} team={'away'} />
+
+						<Results
+							teamName={this.props.boxscore.home_team.first_name.toUpperCase()}
+							players={this.props.boxscore.home_batters}
+							stats={BATTING_STATS}
+							totals={this.props.boxscore.home_batter_totals} />
+
+						<Results
+							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
+							players={this.props.boxscore.away_batters}
+							stats={BATTING_STATS}
+							totals={this.props.boxscore.away_batter_totals} />
+
+
 				</AdjustableContainer>
 
-				<AdjustableContainer
-					ignoreX
-					data-name='container-1'
+				<AdjustableContainer ignoreX
 					adjustments={this.getAdjustmentsFor('container-2')}
 					handleDragEnd={this.createAdjustmentHandler('container-2')}>
-					<LineScoreComponent boxscore={this.props.boxscore}/>
+
+						<LineScoreComponent boxscore={this.props.boxscore}/>
+						<GameSynopsis />
+
 				</AdjustableContainer>
 
-				<AdjustableContainer
-					ignoreX
-					data-name='container-1'
+				<AdjustableContainer ignoreX
 					adjustments={this.getAdjustmentsFor('container-3')}
 					handleDragEnd={this.createAdjustmentHandler('container-3')}>
-					<TeamResultsComponent boxscore={this.props.boxscore} team={'home'} />
+
+						<Results
+							teamName={this.props.boxscore.home_team.first_name.toUpperCase()}
+							players={this.props.boxscore.home_pitchers}
+							stats={PITCHING_STATS} />
+
+						<ResultsSynopsis
+							stats={SYNOPSIS_BATTING_STATS}
+							players={this.props.boxscore.home_batters} />
+
+
+						<Results
+							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
+							players={this.props.boxscore.away_pitchers}
+							stats={PITCHING_STATS} />
+
+
 				</AdjustableContainer>
 			</div>
 		)
 	}
 }
 
-/*
-function mapDispatchToProps(dispatch) {
-
+BoxScoreAdjustable.propTypes = {
+	boxscore: React.PropTypes.object,
+	secondBoxscore: React.PropTypes.object,
+	adjustments: React.PropTypes.object,
+	handleDragEnd: React.PropTypes.func
 }
-*/
 
 export default BoxScoreAdjustable;

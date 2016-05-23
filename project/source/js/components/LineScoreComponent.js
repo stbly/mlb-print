@@ -7,6 +7,8 @@ import '../../stylesheets/components/line-scores.scss'
 
 import DataRow from './DataRow'
 
+import {getTeamName} from '../helpers/stringUtils'
+
 const STATS = [
 	{name:'runs', abbreviation: 'R'},
 	{name:'hits', abbreviation: 'H'},
@@ -43,14 +45,14 @@ class LineScoreComponent extends Component {
 				</DataRow>
 
 				<LineScoreElement
-					team={boxscore.away_team.first_name}
+					team={getTeamName(boxscore.away_team.first_name, boxscore.away_team.last_name)}
 					periodScores={boxscore.away_period_scores}
 					errors={boxscore.away_errors}
 					totals={boxscore.away_batter_totals}
 					stats={STATS} />
 
 				<LineScoreElement
-					team={boxscore.home_team.first_name}
+					team={getTeamName(boxscore.home_team.first_name, boxscore.away_team.last_name)}
 					periodScores={boxscore.home_period_scores}
 					errors={boxscore.home_errors}
 					totals={boxscore.home_batter_totals}

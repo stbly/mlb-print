@@ -1,9 +1,12 @@
 @import '../init';
 
 .results-synopsis {
-	font-size: 12px;
-	line-height: 13px;
+	/*font-size: 16px;*/
 	margin: 5px 0;
+
+	.headers {
+	    text-transform: uppercase;
+	}
 
 	.category {
 		display: none;

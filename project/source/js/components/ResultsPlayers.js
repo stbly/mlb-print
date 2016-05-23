@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import DataRow from './DataRow'
 
-class TeamResultsPlayers extends Component {
+class ResultsPlayers extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -105,10 +105,10 @@ class TeamResultsPlayers extends Component {
 	}
 }
 
-TeamResultsPlayers.propTypes = {
+ResultsPlayers.propTypes = {
 	players: React.PropTypes.array,
 	stats: React.PropTypes.array
 }
 
 
-export default TeamResultsPlayers;
+export default ResultsPlayers;

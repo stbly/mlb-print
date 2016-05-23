@@ -8,29 +8,6 @@
 		padding-right: 30px;
 	}
 
-	button {
-		background: getTeamColor(chicago-white-sox, 3);
-		/*color: getTeamColor(boston-red-sox, 1);*/
-
-		&:not(:last-child) {
-			margin: 0 10px 10px 0;
-		}
-
-		&:hover {
-			background: $color-grey-lightest;
-			background: getTeamColor(boston-red-sox, 1);
-			color: white;
-		}
-
-		* {
-			pointer-events: none
-		}
-
-		&.active {
-			background: red;
-		}
-	}
-
 	.boxscore-info {
 		position: relative;
 		margin: 1em 0;
@@ -54,7 +31,7 @@
 			@include rollover-message('View Fullscreen');
 			&:hover {
 				&:before {
-					background: rgba(0,0,0, 0.85);
+					background: rgba(0,0,0, 0.65);
 				}
 			}
 		}

@@ -4,14 +4,24 @@ import classNames from 'classnames';
 
 import '../../stylesheets/components/results-synopsis.scss'
 
+import ResultsHeader from './ResultsHeader'
 
-class TeamResultsSynopsis extends Component {
+const SYNOPSIS_BATTING_STATS = [
+	{name:'left_on_base', abbreviation: 'LOB'},
+	{name:'doubles', abbreviation: '2B'},
+	{name:'tripes', abbreviation: '3B'},
+	{name:'home_runs', abbreviation: 'HR'},
+	{name:'rbi', abbreviation: 'RBI'},
+	{name:'stolen_bases', abbreviation: 'SB'},
+]
+
+class ResultsSynopsis extends Component {
 	constructor(props) {
 		super(props)
 	}
 
 	getStats () {
-		return this.props.stats.filter(stat => {
+		return SYNOPSIS_BATTING_STATS.filter(stat => {
 			var playersWithStat = this.getPlayersWithStat(stat.name)
 			return playersWithStat.length > 0
 		})
@@ -36,23 +46,28 @@ class TeamResultsSynopsis extends Component {
 
 	render () {
 
+		var name = !this.props.name || <ResultsHeader name={this.props.name}  />
+
 		return (
-			<p className='results-synopsis'>
+			<div className='results-synopsis'>
+
+				{name}
+
 				{this.getStats().map( (stat, index) =>
 					<span key={index} className='category'>
 						<span className='category-name'>{stat.abbreviation}:</span>
 						{this.getStatString(stat)}
 					</span>
 				)}
-			</p>
+			</div>
 		)
 	}
 }
 
-TeamResultsSynopsis.propTypes = {
+ResultsSynopsis.propTypes = {
 	players: React.PropTypes.array,
 	stats: React.PropTypes.array
 }
 
 
-export default TeamResultsSynopsis;
+export default ResultsSynopsis;

@@ -1,0 +1,18 @@
+
+.game-synopsis {
+
+    p {
+    	line-height: 1.1em;
+    	text-indent: 1em;
+    	text-align: justify;
+    }
+
+    .headline,
+	.game-date {
+		font-family: cantarell-oblique;
+	    text-transform: uppercase;
+	    &:after {
+	    	content: ' -- ';
+	    }
+	}
+}

@@ -3,39 +3,10 @@ import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames';
 import LineScoreElement from './LineScoreElement'
 
-import '../../stylesheets/components/team-results.scss'
+import Results from './Results'
+import ResultsSynopsis from './ResultsSynopsis'
 
-import TeamResultsHeader from './TeamResultsHeader'
-import TeamResultsPlayers from './TeamResultsPlayers'
-import TeamResultsTotals from './TeamResultsTotals'
-import TeamResultsSynopsis from './TeamResultsSynopsis'
-
-const BATTING_STATS = [
-	{name:'at_bats', abbreviation: 'AB'},
-	{name:'runs', abbreviation: 'R'},
-	{name:'hits', abbreviation: 'H'},
-	{name:'rbi', abbreviation: 'RBI'},
-	{name:'avg', abbreviation: 'AVG'}
-];
-
-const PITCHING_STATS = [
-	{name:'innings_pitched', abbreviation: 'IP'},
-	{name:'hits_allowed', abbreviation: 'H'},
-	{name:'runs_allowed', abbreviation: 'R'},
-	{name:'earned_runs', abbreviation: 'ER'},
-	{name:'walks', abbreviation: 'BB'},
-	{name:'strike_outs', abbreviation: 'K'},
-	{name:'era', abbreviation: 'ERA'}
-];
-
-const SYNOPSIS_BATTING_STATS = [
-	{name:'left_on_base', abbreviation: 'LOB'},
-	{name:'doubles', abbreviation: '2B'},
-	{name:'tripes', abbreviation: '3B'},
-	{name:'home_runs', abbreviation: 'HR'},
-	{name:'rbi', abbreviation: 'RBI'},
-	{name:'stolen_bases', abbreviation: 'SB'},
-]
+import {BATTING_STATS, PITCHING_STATS, SYNOPSIS_BATTING_STATS} from '../helpers/constants'
 
 class TeamResultsComponent extends Component {
 	constructor(props) {
@@ -63,13 +34,10 @@ class TeamResultsComponent extends Component {
 			teamName = boxscore[teamtype + '_team'].first_name.toUpperCase()
 
 		return (
-			<div onClick={this.handleClick.bind(this)} className='boxscore-item team-results'>
-				<TeamResultsHeader name={teamName} stats={BATTING_STATS} type={'batter'} />
-				<TeamResultsPlayers players={batters} stats={BATTING_STATS} type={'batter'} />
-				<TeamResultsTotals name={teamName} totals={batterTotals} stats={BATTING_STATS} type={'batter'} />
-				<TeamResultsSynopsis stats={SYNOPSIS_BATTING_STATS} players={batters} />
-				<TeamResultsHeader name={teamName} stats={PITCHING_STATS} type={'pitcher'} />
-				<TeamResultsPlayers players={pitchers} stats={PITCHING_STATS} type={'pitcher'} />
+			<div onClick={this.handleClick.bind(this)} className='team-results'>
+				<Results teamName={teamName} players={batters} stats={BATTING_STATS} totals={batterTotals} />
+				<ResultsSynopsis stats={SYNOPSIS_BATTING_STATS} players={batters} />
+				<Results teamName={teamName} players={pitchers} stats={PITCHING_STATS} />
 			</div>
 		)
 	}

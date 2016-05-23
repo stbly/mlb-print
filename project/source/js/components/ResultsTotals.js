@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import DataRow from './DataRow'
 
-class TeamResultsTotals extends Component {
+class ResultsTotals extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -32,10 +32,10 @@ class TeamResultsTotals extends Component {
 	}
 }
 
-TeamResultsTotals.propTypes = {
+ResultsTotals.propTypes = {
 	totals: React.PropTypes.object,
 	stats: React.PropTypes.array
 }
 
 
-export default TeamResultsTotals;
+export default ResultsTotals;

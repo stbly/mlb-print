@@ -1,0 +1,26 @@
+@import '../init';
+
+.events {
+	button {
+		background: getTeamColor(chicago-white-sox, 3);
+		/*color: getTeamColor(boston-red-sox, 1);*/
+
+		&:not(:last-child) {
+			margin: 0 10px 10px 0;
+		}
+
+		&:hover {
+			background: $color-grey-lightest;
+			background: getTeamColor(boston-red-sox, 1);
+			color: white;
+		}
+
+		* {
+			pointer-events: none
+		}
+
+		&.active {
+			background: red;
+		}
+	}
+}

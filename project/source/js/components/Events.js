@@ -5,6 +5,8 @@ import classNames from 'classnames';
 
 import {removeSpaces} from '../helpers/stringUtils'
 
+import '../../stylesheets/components/events.scss'
+
 const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 class Events extends Component {

@@ -22,7 +22,7 @@ class EventPage extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		this.props.eventActions.fetchEventsIfNeeded()
+		this.props.eventActions.fetchEventsIfNeeded().then()
 	}
 
 	// onEventClick (e) {

@@ -1,8 +1,12 @@
 @import '../init';
 
-.team-results {
+.results {
     /*display: inline-block;*/
     vertical-align: top;
+
+    &:not(:last-child) {
+    	margin-bottom: .5em;
+    }
 
 	.row {
 		display: flex;
@@ -49,24 +53,8 @@
 		}
 	}
 
-	.headers,
 	.totals {
-		@include cantarell-bold;
-		font-size: 0.625em;
-		/*background: $color-grey-lightest;*/
-		border: 2px solid black; //$color-grey-medium;
-		border-width: 0 0 2px 0;
-		& > div {
-		    padding: 0 0 .1em;
-		}
-	}
-
-	.headers {
-	    margin-bottom: .5em;
-	}
-
-	.totals {
-		border-width: 2px 0 0 0;
+		border-width: .10em 0 0 0;
 		padding-top: .2em;
 		margin-top: .5em;
 		& > div {

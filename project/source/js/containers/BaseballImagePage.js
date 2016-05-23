@@ -11,9 +11,12 @@ import '../../stylesheets/components/baseball-image-page.scss'
 import classNames from 'classnames';
 
 
-class BoxScorePage extends Component {
+class BaseballImagePage extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			previewMode: false
+		}
 	}
 
 	componentDidMount () {
@@ -34,13 +37,21 @@ class BoxScorePage extends Component {
 		return !propsAreTheSame || !stateIsTheSame || this.props.boxscoreAdjustments
 	}
 
+	togglePreviewMode () {
+		this.setState({previewMode: !this.state.previewMode})
+	}
+
 	render () {
 
+		var pageClasses = classNames('baseball-image-page', {'print-preview':this.state.previewMode})
+
 		return (
-			<div className='baseball-image-page'>
-				<Link to={'/events/' + this.props.params.id}> Go Back</Link>
+			<div className={pageClasses}>
+				<button><Link className='back-button' to={'/events/' + this.props.params.id}> Go Back</Link></button>
+
 				<BaseballImage
 					boxscore={this.props.boxscore}
+					secondBoxscore={this.props.secondBoxscore}
 					boxscoreAdjustments={this.props.boxscoreAdjustments}
 					handleImageAdjusted={this.handleImageAdjusted.bind(this)} />
 			</div>
@@ -57,8 +68,9 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps (state,ownProps) {
 	return {
 		boxscore: state.boxscores.data,
+		secondBoxscore: state.boxscores.dataPlaceholder,
 		boxscoreAdjustments: state.boxscores.adjustments
 	};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BoxScorePage);
+export default connect(mapStateToProps, mapDispatchToProps)(BaseballImagePage);
