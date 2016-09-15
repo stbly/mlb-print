@@ -59,16 +59,16 @@ class BoxScoreAdjustable extends BoxScore {
 					handleDragEnd={this.createAdjustmentHandler('container-1')}>
 
 						<Results
+							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
+							players={this.props.boxscore.away_batters}
+							stats={BATTING_STATS}
+							totals={this.props.boxscore.away_batter_totals} />
+						<Results
 							teamName={this.props.boxscore.home_team.first_name.toUpperCase()}
 							players={this.props.boxscore.home_batters}
 							stats={BATTING_STATS}
 							totals={this.props.boxscore.home_batter_totals} />
 
-						<Results
-							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
-							players={this.props.boxscore.away_batters}
-							stats={BATTING_STATS}
-							totals={this.props.boxscore.away_batter_totals} />
 
 
 				</AdjustableContainer>
@@ -86,6 +86,16 @@ class BoxScoreAdjustable extends BoxScore {
 					adjustments={this.getAdjustmentsFor('container-3')}
 					handleDragEnd={this.createAdjustmentHandler('container-3')}>
 
+
+						<Results
+							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
+							players={this.props.boxscore.away_pitchers}
+							stats={PITCHING_STATS} />
+
+						<ResultsSynopsis
+							stats={SYNOPSIS_BATTING_STATS}
+							players={this.props.boxscore.away_batters} />
+
 						<Results
 							teamName={this.props.boxscore.home_team.first_name.toUpperCase()}
 							players={this.props.boxscore.home_pitchers}
@@ -95,11 +105,6 @@ class BoxScoreAdjustable extends BoxScore {
 							stats={SYNOPSIS_BATTING_STATS}
 							players={this.props.boxscore.home_batters} />
 
-
-						<Results
-							teamName={this.props.boxscore.away_team.first_name.toUpperCase()}
-							players={this.props.boxscore.away_pitchers}
-							stats={PITCHING_STATS} />
 
 
 				</AdjustableContainer>

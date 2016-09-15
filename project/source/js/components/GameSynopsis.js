@@ -18,11 +18,11 @@ class GameSynopsis extends Component {
 
 				<p>
 					<span className='headline'>
-						<span className='game-date'>June 3, 2016</span>
-						Scherzer pitches 8 innings to help Nats beat Marlins 8-2
+						<span className='game-date'>August 18, 2011</span>
+						Trout hits first Major League homer in bout with Orioles
 					</span>
-				Even when Max Scherzer eases up on the strikeouts, he can be plenty tough.</p>
-				<p>Just ask the Miami Marlins. Scherzer fanned eight -- a modest total by his recent standards -- and allowed only two runs in eight innings Sunday to help the Washington Nationals beat Miami 8-2. Scherzer (5-3) gave up six hits, walked none and threw 103 pitches. He has 38 strikeouts in his past three starts, including a record-tying 20 against Detroit, but relied mostly on weak contact rather than whiffs against Miami.</p>
+				Trout began his quest for baseball immortality last night, going yard for the first time since being called up from AAA Salt Lake. Mark Worrel was on the losing end of the pitching duel, with Trout depositing a 3-1 offering into the left field bleachers.</p>
+
 			</div>
 		)
 	}
